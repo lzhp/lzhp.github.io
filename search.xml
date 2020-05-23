@@ -54,7 +54,7 @@
       </tags>
   </entry>
   <entry>
-    <title>win10 install docker</title>
+    <title>在win10上安裝docker</title>
     <url>/2020/05/23/win10-install-docker/</url>
     <content><![CDATA[<p>Win10提供了对docker的支持，记录下Win10下如何安装docker环境。</p>
 <ol>
@@ -74,8 +74,11 @@
 </li>
 <li><p>运行<code>docker run hello-world</code>命令，出现如下图所示</p>
   <img src="/2020/05/23/win10-install-docker/docker-hello-world.png" class="">
+
 </li>
 </ol>
+<p>至此，Win10 下安装Docker成功。</p>
+<p>在安装过程中，有以下需要注意，第一次启动docker时时间很长，我在安装时还出现了几次无法启动，都是通过不断重启windows解决的；win10支持WSL2之后，不安装hyper-v也可以安装docker，但我没有尝试，以后有时间可以试试。</p>
 ]]></content>
   </entry>
   <entry>
@@ -180,15 +183,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>win10 open samba</title>
+    <title>win10打开samba协议支持</title>
     <url>/2019/10/09/win10-open-samba/</url>
     <content><![CDATA[<p>买了一个玩客云，需要使用 samba 协议访问，win10 默认不开放访问 samba，需要进行如下设置。</p>
 <h2 id="打开-win10-的-samba-协议"><a href="#打开-win10-的-samba-协议" class="headerlink" title="打开 win10 的 samba 协议"></a>打开 win10 的 samba 协议</h2><p>依次进入控制面板-程序-程序和功能，选择 samba 相关的两个协议，如下图所示。</p>
-<img src="/2019/10/09/win10-open-samba/win10samba.png">
+<img src="/2019/10/09/win10-open-samba/win10samba.png" class="">
 
 <h2 id="允许匿名访问策略"><a href="#允许匿名访问策略" class="headerlink" title="允许匿名访问策略"></a>允许匿名访问策略</h2><p>进入命令行，输入<code>gpedit.msc</code>，进入组策略编辑器。</p>
 <p>如下图，选择：管理模板-网络-lan man 工作站，将“启用不安全来宾登录”设置为已启用。</p>
-<img src="/2019/10/09/win10-open-samba/smbpolicy.png">
+<img src="/2019/10/09/win10-open-samba/smbpolicy.png" class="">
 
 <p>现在应该可以访问 samba 的文件了。</p>
 ]]></content>
