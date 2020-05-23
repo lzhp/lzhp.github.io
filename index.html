@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lzhp.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false,"padding":18},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"save":"auto","color":"#222"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="不惑之际">
+<meta property="og:url" content="http://lzhp.github.io/index.html">
+<meta property="og:site_name" content="不惑之际">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="lizhipeng@gmail.com">
+<meta property="article:tag" content="spring cloud">
+<meta property="article:tag" content=" micro service">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://lzhp.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>不惑之际</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="不惑之际" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">不惑之际</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">年入不惑，记录生活，记录感悟，记录技术</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2020/05/23/win10-install-docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/23/win10-install-docker/" class="post-title-link" itemprop="url">win10 install docker</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-23 21:05:18 / 修改时间：22:17:57" itemprop="dateCreated datePublished" datetime="2020-05-23T21:05:18+08:00">2020-05-23</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/23/win10-install-docker/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/23/win10-install-docker/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>360</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Win10提供了对docker的支持，记录下Win10下如何安装docker环境。</p>
+<ol>
+<li><p>首先启用hyper-v，在“启用或关闭 Windows 功能”里，选择hyper-v功能，如下：</p>
+ <img src="/2020/05/23/win10-install-docker/install-hyper-v.png" class="">
+
+<p> 注：如果安装了vmware等功能，安装hyper-v会导致VMware无法使用，请做好评估后使用</p>
+</li>
+<li><p>到 <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">docker 官网</a>下载docker安装文件，文件比较大，用迅雷等工具下载比较快，现在后根据提示安装即可。</p>
+</li>
+<li><p>安装后需要重新启动Windows，Docker随开机启动，第一次运行时docker启动时间略长，根据需要，可能需要多次重启电脑。</p>
+</li>
+<li><p>启动后，耐心等待docker启动成功，在系统的右下角，会出现一条小鲸鱼，如下图。</p>
+ <img src="/2020/05/23/win10-install-docker/docker-running.png" class="">
+</li>
+<li><p>进入命令行，执行<code>docker --version</code>命令，正确执行说明安装成功。</p>
+</li>
+<li><p>运行<code>docker run hello-world</code>命令，出现如下图所示</p>
+  <img src="/2020/05/23/win10-install-docker/docker-hello-world.png" class="">
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2020/04/06/hard-disk-damaged/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/06/hard-disk-damaged/" class="post-title-link" itemprop="url">硬盘损坏</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-06 22:20:07" itemprop="dateCreated datePublished" datetime="2020-04-06T22:20:07+08:00">2020-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/04/06/hard-disk-damaged/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/06/hard-disk-damaged/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>577</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>某天，从 nas 上备份数据到台式机的仓库盘，不知道啥情况，本来很快就可以完成的备份，很长时间没有完成，台式机也非常慢，挪动下鼠标都很缓慢。进入任务管理器，发现只有个叫“系统中断”的进程占用 CPU 特别高，没其他特殊的。又找了找，看到仓库硬盘的速度特别慢，拷贝文件进去只有 2-3M/s，然后系统被拖得很慢，正常的怎么也要 89-90M/s 吧。看着情况，硬盘是不是要挂了。上京东搜了一下，这块盘是 2017 年 9 月买的希捷 4T 硬盘，民用的，2019 年 9 月刚过保修期，真是太坏了。</p>
+<p>为了数据，赶紧调研，从京东上买一块新的，为了数据安全，买了个企业希捷企业级硬盘，5 年只换不修，为了保险，又花 49 块钱加了 3 年延保，这样保障 8 年用下来安全，反正本来就是仓库盘，备份数据用的，多备份几份，发现不行了赶紧找京东换新的。</p>
+<p>新硬盘到了之后，赶紧换上，企业级硬盘噪音好像是有点高，不过速度够快，不错，重新把数据备份起来。换下来旧硬盘，用 usb 挂上，4T 的容量识别出有 16T!! 然后磁盘没有分区了，识别不出来了，进不去硬盘，用 disk genius 重新建了分区，然后格式化一下，居然好了，在用 disk genius 扫描，扫到一半了，全绿，不知道啥情况，看着好像是又好了。。。。</p>
+<p>下周准备挂到另外一个 nas 里，继续做备份盘吧。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2020/02/08/qnap-sync-oneCloud/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/08/qnap-sync-oneCloud/" class="post-title-link" itemprop="url">备份远程文件夹到威联通Nas</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-08 22:54:47" itemprop="dateCreated datePublished" datetime="2020-02-08T22:54:47+08:00">2020-02-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/02/08/qnap-sync-oneCloud/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/08/qnap-sync-oneCloud/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>789</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>不得不吐槽，威联通的易用性真的很差，一个文件夹同步的功能，折腾一晚上才搞定，记录一下。</p>
+<p>场景其实很简单，就是有一个威联通 nas，还有一个玩客云，现在想在威联通设置一下，定时将玩客云上的一个文件夹同步到 nas 上，原以为是一个很简单的需求，但是折腾了很长时间。</p>
+<p>第一个问题是用哪个应用，先看了“Qsync Central”，这个不能定时备份，还需要有客户端；有人说用第三方应用，这么个简单工作，还需要装应用，不值当的呀！从网上搜了很长时间，有人说“同步备份中心”，但是在 qnap 的 4.4.1 的版本里，已经没有这个应用了，升级后的版本推荐用“HBS 3 Hybrid Backup Sync”，看了半天帮助文档，觉得功能确实强大，可以支持远程 Nas、支持 ftp、支持 rSync、支持 SMB 协议，还支持 n 多云服务，恰好玩客云已经开启了 SMB 文件共享，用这个正合适。</p>
+<p>功能虽然强大，但是易用性确实不太好，设置了一晚上，中间好几次都快放弃了。直接把操作记录一下：</p>
+<ol>
+<li><p>进入 HBS 3，选择“同步”，“创建同步”，然后选择“活动同步作业”（这个翻译很让人吐槽，不知道什么个意思。其他两个选项“双向同步作业”“单向同步作业”，“单向同步作业”是 nas 同步到远程或者云，“活动同步作业”是云或者远程同步到本地 nas）。</p>
+<img src="/2020/02/08/qnap-sync-oneCloud/qnap-smb0.png">
+</li>
+<li><p>然后选择“远程 CIFS/SMB 服务器”，弹出服务器设置，这个设置就设置了一晚上，不知道啥个格式，搞了好久才搞好。有几个注意点: 用户名和密码一定要输入，如果是允许匿名访问，这里用户名输入“anonymous”，密码随便输入一个就可以；路径的分隔符是“/”，不是 windows 常用的“\”，可参考下图设置。另外千万不要选那个放大镜的浏览按钮，不然一致转啊转，没个完，不知道啥问题。</p>
+<img src="/2020/02/08/qnap-sync-oneCloud/qnap-smb.png">
+</li>
+<li><p>后续的设置就比较简单了，选择同步的文件夹和同步的时间、频率即可。</p>
+<img src="/2020/02/08/qnap-sync-oneCloud/qnap-sync-onecloud2.png">
+<img src="/2020/02/08/qnap-sync-oneCloud/qnap-sync-onecloud3.png">
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2020/01/14/qnap-nas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/14/qnap-nas/" class="post-title-link" itemprop="url">折腾威联通Nas</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-14 21:35:27" itemprop="dateCreated datePublished" datetime="2020-01-14T21:35:27+08:00">2020-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/01/14/qnap-nas/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/14/qnap-nas/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>493</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>年底，折腾心又起，买了一个威联通 nas，记录下如何折腾的。先只记录过程。</p>
+<h2 id="系统安装及磁盘划分"><a href="#系统安装及磁盘划分" class="headerlink" title="系统安装及磁盘划分"></a>系统安装及磁盘划分</h2><p>威联通型号是 963N，9 盘位的，感觉盘位真多呀，因此准备了两块 512G 的希捷 SSD，京东买的，5 年质保，出现问题直接换一块，短期内不担心系统出问题，SSD 组成 raid1，两块盘采用静态卷做系统盘（吐槽下，威联通的存储池、卷、系统卷这些概念要都搞清楚还挺花功夫的），系统盘用来装应用。</p>
+<p>插了 SSD 之后，安装常用的 APP，我常用的照片管理软件 QuMagie、同步软件 Qsync Central、远程连接软件 Cloud link 等等。</p>
+<p>仓库盘是黑五采购的两块 12T 的硬盘，两块盘组 Raid1，建立了第二个存储池，然后在存储池上建立了两个简单卷（感觉简单卷和厚卷的区别只是会不会提前分配空间，我选择了简单卷），一个卷是为了存家里照片的，命名为 photo，另外一个卷存储数据，命名为 data。卷建好之后，还要在卷下边建立共享文件夹，整个目录结构大致如下：</p>
+<img src="/2020/01/14/qnap-nas/qnap-tree.png">
+
+<p>后续再采购 1 块 SSD，用来做高速缓存加速， 再采购 1-2 块硬盘，放点不重要的资料，比如电影、音乐之类的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2019/11/11/%E5%BC%82%E5%9C%B0%E5%8C%BB%E4%BF%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/11/%E5%BC%82%E5%9C%B0%E5%8C%BB%E4%BF%9D/" class="post-title-link" itemprop="url">河北新农合到北京医院异地看病办理手续</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-11 22:13:09" itemprop="dateCreated datePublished" datetime="2019-11-11T22:13:09+08:00">2019-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/11/11/%E5%BC%82%E5%9C%B0%E5%8C%BB%E4%BF%9D/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/11/异地医保/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文写于 2019 年 11 月，只反映此时状况。<br>河北唐山新农合到北京看病，办理流程。</p>
+<p>妈妈在 10 月 27 日，突发疾病，住进了北京宣武医院，办理住院手续时，住院处的窗口有个提示，异地医保要在 24 小时内将已经办理好异地医保备案的社保卡提交给医院，否则不予办理异地医保直接结算。于是，开启了办理异地医保的征途。</p>
+<p>首先，我上了河北异地医保备案的微信公众号(河北医疗保障局)，有比较详细的指导，地址<a href="http://ylbzj.hebei.gov.cn:8165/help.html" target="_blank" rel="noopener">http://ylbzj.hebei.gov.cn:8165/help.html</a>，依次注册账号，增加备案人员，把老妈的账号填进去，一开始还是顺利的，但是进入“转诊转院”备案页面，按照“个人直接申请转诊转院”一路申请下来，填写了需要转诊的医院，开始时间等，进行提交。然后进入备案结果页面，查询备案结果，显示结果“备案失败：社会保障卡未激活，请激活后再申报”，赶紧让家人带着卡赶回老家，找社保的人激活卡（具体怎么激活的我没去，所以不知道），据说使用过就是激活了，老爸的以前在家用卡买过药，我尝试备案直接是成功的，家人说激活做了，备案也做了，我不放心，在公众号又手工操作了一遍，显示绿色的“备案成功”。然后赶在 24 小时内，提交到医院，终于赶上了，医院也确认备案成功，可以查到信息。办理成功后，医保卡就压在了这个医院，不在个人手里放着了。</p>
+<p>备案后，出院就比较简单，医保能报销的直接就报销了，根据医保内的金额、报销比例等，直接就结算了，只需要结算个人负担的那部分就行了。</p>
+<p>我们出院其实是从一个大点的宣武医院转到了北京的另一个小一点的医院 B，这就存在一个医保衔接的问题。我想提前办理第二次备案，结果备案直接提示“在院期间，不予许办理备案操作！（原因：当前人员于<em>年</em>月*日在北京宣武医院入院，尚未出院结算，解决办法，请住院结算或无费出院后，再进行备案）”，看来是不允许同时在两家医院备案。因此想催宣武医院尽快办理出院手续，很不幸的是，宣武医院由于存在一些问题，本该周五出院，周五结算，但是护士打电话通知我说，由于某些原因，需要下个周一才能办理出院手续，因此，出院手续不能办，社保卡也拿不出来，好在 B 医院说，在办 B 医院出院手续前，把社保卡交到住院处就行，但是从哪天能报销住院费用，需要看医保备案的起始时间，因此周末还在担心周五周六周日周一这几天的费用没法使用异地医保报销。</p>
+<p>周一下午，到宣武医院办理出院结算，异地医保直接报销了一部分费用，剩下的用住院押金结算，还退回了一部分钱，出院时间显示的是上周五的时间，同时领回来社保卡。办理完出院手续，马上在微信公众号办理了 B 医院的“转诊转院”备案，在选择“申请时间”时，注意要选择上个周五，也就是 B 医院的入院日期，然后杀到 B 医院，到住院处交社保卡，住院处操作很顺利的用上周五的时间办理了异地医保登记，同时明确告诉我，从入院那天开始，可以异地医保报销，还算合理。</p>
+<p>现在异地医保的备案已经非常简便了，老人在老家激活过社保卡后，后续异地医保备案在公众号简单操作就行，真的便利了很多。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2019/10/09/win10-open-samba/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/09/win10-open-samba/" class="post-title-link" itemprop="url">win10 open samba</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-09 21:22:00" itemprop="dateCreated datePublished" datetime="2019-10-09T21:22:00+08:00">2019-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/10/09/win10-open-samba/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/09/win10-open-samba/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>215</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>买了一个玩客云，需要使用 samba 协议访问，win10 默认不开放访问 samba，需要进行如下设置。</p>
+<h2 id="打开-win10-的-samba-协议"><a href="#打开-win10-的-samba-协议" class="headerlink" title="打开 win10 的 samba 协议"></a>打开 win10 的 samba 协议</h2><p>依次进入控制面板-程序-程序和功能，选择 samba 相关的两个协议，如下图所示。</p>
+<img src="/2019/10/09/win10-open-samba/win10samba.png">
+
+<h2 id="允许匿名访问策略"><a href="#允许匿名访问策略" class="headerlink" title="允许匿名访问策略"></a>允许匿名访问策略</h2><p>进入命令行，输入<code>gpedit.msc</code>，进入组策略编辑器。</p>
+<p>如下图，选择：管理模板-网络-lan man 工作站，将“启用不安全来宾登录”设置为已启用。</p>
+<img src="/2019/10/09/win10-open-samba/smbpolicy.png">
+
+<p>现在应该可以访问 samba 的文件了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2019/08/23/Install-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/23/Install-hexo/" class="post-title-link" itemprop="url">用hexo写博客</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-23 01:35:27" itemprop="dateCreated datePublished" datetime="2019-08-23T01:35:27+08:00">2019-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/08/23/Install-hexo/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/23/Install-hexo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>284</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>总想找个地方写博客，后来研究来研究去，用 markdown 的方式感觉最合适，hexo 是这方面里比较好的选择。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><p>先安装 git，nodejs；</p>
+</li>
+<li><p>安装 hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件 _config.yml</p>
+</li>
+<li><p>配置模板，推荐用 next</p>
+</li>
+<li><p>开始编写博客</p>
+<ul>
+<li><p>写新文章</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调试预览</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成待发布文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布到网站</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2019/08/22/Install-Eclipse-STS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/22/Install-Eclipse-STS/" class="post-title-link" itemprop="url">安装Eclipse(STS)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-22 21:08:55" itemprop="dateCreated datePublished" datetime="2019-08-22T21:08:55+08:00">2019-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/08/22/Install-Eclipse-STS/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/22/Install-Eclipse-STS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>942</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>每次重新安装 Eclipse（STS）都是非常痛苦，每次都有一些必须的安装内容，记录一下，备忘。</p>
+<p>本次安装，基于 STS4.4.2 版，2019 年 8 月底。<br>JDK 已经安装好的情况下。</p>
+<ol>
+<li>到官方网站下载 zip 版本的 STS 文件，官方地址：<br>STS：<a href="https://spring.io/tools" target="_blank" rel="noopener">https://spring.io/tools</a><br>Eclipse：<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">https://www.eclipse.org/downloads/</a></li>
+<li>解压，先不着急启动</li>
+<li>安装 lombok 插件，直接双击 lombok.jar，选择已经解压的目录即可</li>
+<li>打开解压目录下的 SpringToolSuite4.ini 文件，去掉 lombok 的绝对路径，改为相对路径<img src="/2019/08/22/Install-Eclipse-STS/utf8.png"></li>
+<li>修改默认为 utf-8 编码，在 SpringToolSuite4.ini 文件的最下面加入一行代码:-Dfile.encoding=UTF-8，如上图</li>
+<li>安装 google style 插件，从<a href="https://github.com/google/google-java-format#eclipse" target="_blank" rel="noopener">https://github.com/google/google-java-format#eclipse</a>下载 google-java-format-eclipse-plugin_1.6.0.jar，放到”dropins”目录</li>
+<li>启动 Eclipse（STS）</li>
+<li>进入“Window &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter &gt; Formatter Implementation”，选择 google formatter，见下图<img src="/2019/08/22/Install-Eclipse-STS/formatter.png"></li>
+<li>依次安装常用的插件：<ol>
+<li>反编译，Enhanced Class Decompiler</li>
+<li>代码静态扫描，sonarlint</li>
+<li>阿里规约扫描 <a href="https://p3c.alibaba.com/plugin/eclipse/update" target="_blank" rel="noopener">https://p3c.alibaba.com/plugin/eclipse/update</a></li>
+<li>可选，如果需要安装 Flowable，安装 flowable designer：<a href="http://flowable.org/designer/update" target="_blank" rel="noopener">http://flowable.org/designer/update</a></li>
+</ol>
+</li>
+<li>为解决中英文字体大小不一致，依次“Window &gt; Preferences &gt; General &gt; Appearance &gt; Corlor and Fonts &gt; Text Font”，调整字体大小为五号或者小五<img src="/2019/08/22/Install-Eclipse-STS/font.png">
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2019/06/05/cross-wall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/05/cross-wall/" class="post-title-link" itemprop="url">科学上网</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-05 23:40:52" itemprop="dateCreated datePublished" datetime="2019-06-05T23:40:52+08:00">2019-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/06/05/cross-wall/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/05/cross-wall/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>561</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>经常上网查些资料，包括google、github、stackoverflow等等，但是有的时候会突然访问不了，影响使用。为了提高工作效率，只能想各种方法正常访问这些网站，以下两种是我用过的方式。</p>
+<h2 id="自己搭建-服务"><a href="#自己搭建-服务" class="headerlink" title="自己搭建$$服务"></a>自己搭建$$服务</h2><p>在<a href="https://bandwagonhost.com/aff.php?aff=9676" target="_blank" rel="noopener">https://bandwagonhost.com</a>买了一个vps服务器，有各种规格的，我买的是一个1c256M内存的虚拟机，$19.9/year，买完后可以一键安装SS服务端，就可以使用了，用起来其实也还算平稳，日常查资料足够了。续费了好几年了，无奈虚拟机ip有时会无缘无故访问不到，网站原来每年可以有一次免费更换ip的服务，可能是换的人太多了，这项服务没有了。这不前几天又突然用不了了，只能另想办法。</p>
+<h2 id="直接购买-服务"><a href="#直接购买-服务" class="headerlink" title="直接购买$$服务"></a>直接购买$$服务</h2><p>国内很多用户购买bandwagonhost主机的唯一用途就是搭建$$服务，这个网站瞅准这个需求，直接推出了搭建好的$$服务,地址<a href="https://justmysocks.net/members/aff.php?aff=1850" target="_blank" rel="noopener">https://justmysocks.net/</a>，相比自行搭建，直接购买服务更直接，还有两个优势，一是在服务期内保证服务，不需担心IP不能访问的问题，由服务商自动处理不能访问的IP；二是访问速度做了优化，对中国大陆用户更加友好。第一个方案的IP不能访问后，直接买了一个最便宜的，$28.88/year，会提供5个域名，支持3个设备，每月100G流量，查资料足够了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhp.github.io/2019/01/24/hexo-starter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lizhipeng@gmail.com">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不惑之际">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/24/hexo-starter/" class="post-title-link" itemprop="url">hexo入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-01-24 10:32:18" itemprop="dateCreated datePublished" datetime="2019-01-24T10:32:18+08:00">2019-01-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 20:41:27" itemprop="dateModified" datetime="2020-05-23T20:41:27+08:00">2020-05-23</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/01/24/hexo-starter/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/24/hexo-starter/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>364</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>hexo入门</p>
+<p>blog</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h2 id="引入Next主题"><a href="#引入Next主题" class="headerlink" title="引入Next主题"></a>引入Next主题</h2><h3 id="下载及使用"><a href="#下载及使用" class="headerlink" title="下载及使用"></a>下载及使用</h3><p>Next使用说明：<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html</a></p>
+<h3 id="修改next的设置"><a href="#修改next的设置" class="headerlink" title="修改next的设置"></a>修改next的设置</h3><p>项目的配置文件位置：<code>source\_data\next.yml</code>，会覆盖<code>theme\Next</code>目录下的配置文件</p>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lizhipeng@gmail.com</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lzhp" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lzhp" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/lzhpeng" title="微博 → https:&#x2F;&#x2F;weibo.com&#x2F;lzhpeng" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>微博</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/lzhpeng" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;lzhpeng" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/1415511/lizhipeng" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;1415511&#x2F;lizhipeng" rel="noopener" target="_blank"><i class="stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lizhipeng@gmail.com</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">11 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'http://lzhp.github.io/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://lizhipeng.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>
