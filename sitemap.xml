@@ -2,16 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lzhp.github.io/2020/05/23/win10-install-docker/</loc>
+    <loc>http://lzhp.github.io/2019/10/09/win10-open-samba/</loc>
     
-    <lastmod>2020-05-23T17:01:02.339Z</lastmod>
+    <lastmod>2020-06-02T13:09:23.283Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://lzhp.github.io/2019/10/09/win10-open-samba/</loc>
+    <loc>http://lzhp.github.io/2019/11/11/%E5%BC%82%E5%9C%B0%E5%8C%BB%E4%BF%9D/</loc>
     
-    <lastmod>2020-05-23T16:57:47.122Z</lastmod>
+    <lastmod>2020-06-02T13:09:23.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2019/06/05/cross-wall/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.282Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2019/08/23/Install-hexo/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2019/08/22/Install-Eclipse-STS/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.280Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2020/06/02/repair-printer/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.279Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2020/05/27/post-on-gitee/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.276Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2020/05/23/win10-install-docker/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.275Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2020/01/14/qnap-nas/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.274Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lzhp.github.io/2020/02/08/qnap-sync-oneCloud/</loc>
+    
+    <lastmod>2020-06-02T13:09:23.274Z</lastmod>
     
   </url>
   
@@ -30,20 +86,6 @@
   </url>
   
   <url>
-    <loc>http://lzhp.github.io/2019/11/11/%E5%BC%82%E5%9C%B0%E5%8C%BB%E4%BF%9D/</loc>
-    
-    <lastmod>2020-05-23T12:41:27.099Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lzhp.github.io/2019/06/05/cross-wall/</loc>
-    
-    <lastmod>2020-05-23T12:41:27.097Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lzhp.github.io/2019/01/24/hexo-starter/</loc>
     
     <lastmod>2020-05-23T12:41:27.097Z</lastmod>
@@ -58,37 +100,9 @@
   </url>
   
   <url>
-    <loc>http://lzhp.github.io/2019/08/23/Install-hexo/</loc>
-    
-    <lastmod>2020-05-23T12:41:27.096Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lzhp.github.io/2020/04/06/hard-disk-damaged/</loc>
     
     <lastmod>2020-05-23T12:41:27.093Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lzhp.github.io/2019/08/22/Install-Eclipse-STS/</loc>
-    
-    <lastmod>2020-05-23T12:41:27.093Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lzhp.github.io/2020/02/08/qnap-sync-oneCloud/</loc>
-    
-    <lastmod>2020-05-23T12:41:27.088Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lzhp.github.io/2020/01/14/qnap-nas/</loc>
-    
-    <lastmod>2020-05-23T12:41:27.087Z</lastmod>
     
   </url>
   
